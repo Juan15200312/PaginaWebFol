@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portfolio & Blog — Nombre Apellido</title>
+  <meta name="description" content="Portfolio personal y blog. Sustituye los contenidos por los tuyos." />
+  <style>
+    :root{
+      --bg:#f5f8fb; /* very light */
+      --card:#ffffff;
+      --muted:#5b6b78; /* muted text */
+      --accent:#4da6ff; /* light blue accent */
+      --glass: rgba(77,166,255,0.06);
+      --maxw:1100px;
+      --radius:12px;
+      --gap:18px;
+      --text:#0f2430; /* dark text */
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;background:linear-gradient(180deg,#f8fbff 0%, #eef6ff 60%);color:var(--text);-webkit-font-smoothing:antialiased}
+    a{color:var(--accent);text-decoration:none}
+    .container{max-width:var(--maxw);margin:32px auto;padding:20px}
+
+    /* Header */
+    header{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px;border-radius:14px;background:rgba(255,255,255,0.8);box-shadow:0 6px 18px rgba(20,40,60,0.06)}
+    .brand{display:flex;gap:12px;align-items:center}
+    .logo{width:56px;height:56px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#7ecbff);display:flex;align-items:center;justify-content:center;font-weight:700;color:white}
+    nav ul{display:flex;gap:16px;list-style:none;margin:0;padding:0}
+    nav a{padding:6px 10px;border-radius:8px}
+    nav a:hover{background:var(--glass)}
+
+    /* Hero */
+    .hero{display:grid;grid-template-columns:1fr 360px;gap:24px;align-items:center;margin-top:22px}
+    .intro h1{margin:0 0 8px 0;font-size:clamp(22px,3.6vw,34px)}
+    .intro p{color:var(--muted);line-height:1.6}
+    .cta{display:flex;gap:10px;margin-top:16px}
+    .btn{background:var(--accent);color:white;padding:10px 14px;border-radius:10px;font-weight:600;border:0;cursor:pointer}
+    .btn.ghost{background:transparent;color:var(--text);border:1px solid rgba(15,36,48,0.06)}
+
+    /* Profile card */
+    .card{background:var(--card);padding:18px;border-radius:var(--radius);box-shadow:0 8px 20px rgba(20,40,60,0.05)}
+    .profile{display:flex;gap:12px;align-items:center}
+    .avatar{width:80px;height:80px;border-radius:12px;background:linear-gradient(135deg,#7ecbff,#4da6ff);display:flex;align-items:center;justify-content:center;font-size:28px;font-weight:700;color:white}
+    .meta small{color:var(--muted)}
+
+    /* Sections */
+    section{margin-top:28px}
+    h2{margin:0 0 14px 0;color:var(--text)}
+
+    /* Portfolio grid */
+    .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:var(--gap)}
+    .project{background:var(--card);border-radius:12px;overflow:hidden;display:flex;flex-direction:column;border:1px solid rgba(15,36,48,0.04)}
+    .project img{width:100%;height:150px;object-fit:cover;display:block}
+    .project .pcontent{padding:12px}
+    .tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+    .tag{background:rgba(77,166,255,0.08);padding:6px 8px;border-radius:8px;font-size:13px;color:var(--accent)}
+
+    /* Blog */
+    .posts{display:flex;flex-direction:column;gap:12px}
+    .post{background:var(--card);padding:12px;border-radius:10px;display:flex;flex-direction:column;border:1px solid rgba(15,36,48,0.04)}
+    .post .meta{display:flex;justify-content:space-between;color:var(--muted);font-size:13px}
+    .excerpt{color:var(--muted);margin-top:8px}
+
+    /* Contact / Footer */
+    .contact-grid{display:grid;grid-template-columns:1fr 320px;gap:16px}
+    form label{display:block;margin-bottom:6px;font-size:14px}
+    input,textarea{width:100%;padding:10px;border-radius:8px;border:1px solid rgba(15,36,48,0.06);background:linear-gradient(180deg,#ffffff,#fbfdff);color:var(--text)}
+    textarea{min-height:120px}
+    footer{margin-top:40px;padding:16px;text-align:center;color:var(--muted)}
+
+    /* Responsive */
+    @media (max-width:880px){
+      .hero{grid-template-columns:1fr}
+      .contact-grid{grid-template-columns:1fr}
+      nav ul{display:none}
+    }
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo">JO</div>
+        <div>
+          <div style="font-weight:700">Juan Ortiz</div>
+          <small style="color:var(--muted)">Estudiante de FP Informática — Epsum, Madrid</small>
+        </div>
+      </div>
+
+      <nav aria-label="navegacion principal">
+        <ul>
+          <li><a href="#home">Inicio</a></li>
+          <li><a href="#portfolio">Proyectos</a></li>
+          <li><a href="#blog">Blog</a></li>
+          <li><a href="#contact">Contacto</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section id="home" class="hero">
+        <div class="intro">
+          <h1>Hola, soy <span style="color:var(--accent)">Juan Ortiz</span> — desarrollador y entusiasta de la informática</h1>
+          <p>Soy alumno de FP en Epsum. Me apasiona la programación, el desarrollo web y los videojuegos. Aquí muestro mis proyectos, escribo sobre lo que aprendo y comparto mis progresos.</p>
+          <div class="cta">
+            <a class="btn" href="#portfolio">Ver proyectos</a>
+            <a class="btn ghost" href="#blog">Leer el blog</a>
+          </div>
+
+        </div>
+
+        <aside class="card">
+          <div class="profile">
+            <div class="avatar">JO</div>
+            <div class="meta">
+              <div style="font-weight:700">Juan Ortiz</div>
+              <small>Estudiante FP — 21 años</small>
+              <div style="margin-top:8px;color:var(--muted);font-size:14px">Especialidad: Desarrollo web · Java · Python</div>
+            </div>
+          </div>
+
+          <div style="margin-top:14px;display:flex;justify-content:space-between;gap:8px">
+            <a class="btn" href="#contact">Contacto</a>
+            <a class="btn ghost" href="#" download="CV_Juan_Apellido.pdf">Descargar CV</a>
+          </div>
+        </aside>
+      </section>
+
+      <!-- Portfolio -->
+      <section id="portfolio">
+        <h2>Proyectos</h2>
+        <p style="color:var(--muted)">Proyectos desarrollados a lo largo de mi formación. </p>
+        <div class="grid" id="projectsGrid">
+          <!-- Projects will be rendered by JS. Default placeholders provided. -->
+        </div>
+      </section>
+
+      <!-- Blog -->
+      <section id="blog">
+        <h2>Blog</h2>
+        <p style="color:var(--muted)">Artículos y notas sobre lo que voy aprendiendo.</p>
+        <div class="posts" id="postsList">
+          <!-- Posts rendered by JS -->
+        </div>
+      </section>
+
+
+      <!-- Contact -->
+      <section id="contact">
+        <h2>Contacto</h2>
+        <div class="contact-grid">
+          <div>
+            <p style="color:var(--muted)">Escríbeme — si prefieres, usa el correo o mis redes sociales.</p>
+            <form id="contactForm" onsubmit="return sendMail();">
+              <label for="name">Nombre</label>
+              <input id="name" name="name" placeholder="Tu nombre" required />
+
+              <label for="email">Correo</label>
+              <input id="email" name="email" type="email" placeholder="tu@ejemplo.com" required />
+
+              <label for="message">Mensaje</label>
+              <textarea id="message" name="message" placeholder="Escribe tu mensaje aquí" required></textarea>
+
+              <div style="margin-top:10px;display:flex;gap:10px">
+                <button class="btn" type="submit">Enviar</button>
+                <button class="btn ghost" type="reset">Borrar</button>
+              </div>
+            </form>
+          </div>
+
+          <aside class="card">
+            <h4 style="margin:0 0 8px 0">Datos</h4>
+            <p style="color:var(--muted);margin:0 0 8px 0">Email: <a href="mailto:juanjoseortizolivares@gmail.com">juanjoseortizolivares@gmail.com</a></p>
+            <p style="color:var(--muted);margin:0 0 8px 0">Teléfono: <a href="tel:+34612345678">+34 612 34 56 78</a></p>
+            <p style="color:var(--muted);margin:0 0 8px 0">GitHub: <a href="https://github.com/Juan15200312">github.com/Juan15200312</a></p>
+          </aside>
+        </div>
+      </section>
+
+    </main>
+
+    <footer>
+      <div style="color:var(--muted)">© <span id="year"></span> — Juan Ortiz. Pagina web personal.</div>
+    </footer>
+  </div>
+
+  <script>
+    // Set year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Sample data: replace with your real projects/posts
+    const projects = [
+      {id:1,title:'Codigo de barras',desc:'Generador de códigos de barras en Python, desde la consola.',img:'https://play-lh.googleusercontent.com/VtaEkLmcqsngSBKhm-_Bc9ozm9CSHht3_tWO04drXzjk3KTWfwHwQ9BU7vhRkfA44PT-=w600-h300-pc0xffffff-pd',link:'https://github.com/Juan15200312/CodigoBarras.git'},
+      {id:2,title:'Pagina web personal',desc:'Proyecto de pagina web personal, donde muestro mis proyectos y habilidades.',img:'https://webtematica.com/sites/default/files/field/image/web-personal.jpg',link:'https://github.com/Juan15200312/Juan15200312.github.io.git'},
+      {id:3,title:'Tienda de libros',desc:'Proyecto de tienda de libros en línea, con carrito de compras y pago.',img:'https://img.freepik.com/vector-premium/ilustracion-logo-libreria-aislado-blanco_101884-1489.jpg',link:'https://github.com/Juan15200312/BookStore.git'},
+      {id:4,title:'Juego BlackJack',desc:'Implementación del juego BlackJack en Java (consola).',img:'https://www.oxfordcasino.com/wp-content/uploads/2023/12/1100x600-Maroon-Blackjack.jpg',link:'https://github.com/Juan15200312/BlackJack.git'},
+      {id:5,title:'Programas Básicos en Java',desc:'Scripts básicos en Java de practica.',img:'https://i.blogs.es/3818bd/programacion/1366_2000.jpg',link:'https://github.com/Juan15200312/ProgramasBasicos.git'},
+    ];
+
+    const posts = [
+      {id:1,title:'Aprendiendo herencia en Java',date:'2025-02-10',excerpt:'Explico cómo usar la herencia y @Override en Java con ejemplos.',content:'La herencia en Java es un concepto de la programación orientada a objetos (POO) que permite que una clase (subclase) herede propiedades y comportamientos (campos y métodos) de otra clase existente (superclase). Esto promueve la reutilización de código, la creación de jerarquías de clases y una mejor organización del programa. Para indicar la herencia, se utiliza la palabra clave extends. Además, el uso de @Override permite redefinir métodos heredados para proporcionar una implementación específica en la subclase.'},
+      {id:2,title:'Mi experiencia creando una API en Flask',date:'2025-04-13',excerpt:'Pasos para crear una API que convierte YouTube a MP3/MP4.',content:'El blog "Mi experiencia creando una API en Flask" detalla el proceso de desarrollo de una API RESTful en Python. Usando Flask y la biblioteca yt-dlp, el autor construyó una herramienta para convertir enlaces de YouTube a formatos MP3/MP4, enfocándose en la simplicidad, la reutilización de código y la gestión de errores prácticos.'},
+      {id:3,title:'Cómo programar un juego simple en Python',date:'2025-01-18',excerpt:'Guía rápida para crear un juego de consola, estructura y buenas prácticas.',content:'La guía "Cómo programar un juego simple en Python" ofrece un tutorial rápido para principiantes, delineando los pasos esenciales para construir un juego funcional de consola. Cubre la estructura básica del código, la lógica del juego y la implementación de buenas prácticas de programación.'}
+    ];
+
+    // Render projects
+    const grid = document.getElementById('projectsGrid');
+    projects.forEach(p => {
+      const card = document.createElement('article');
+      card.className = 'project';
+      card.innerHTML = `
+        <img src="${p.img}" alt="Imagen ${p.title}">
+        <div class="pcontent">
+          <h3 style="margin:0">${p.title}</h3>
+          <p style="margin:8px 0 0 0;color:var(--muted)">${p.desc}</p>
+          <div style="margin-top:12px">
+            <a href="${p.link}" class="btn">Ver detalle</a>
+          </div>
+        </div>
+      `;
+      grid.appendChild(card);
+    });
+
+    // Render posts
+    const postsList = document.getElementById('postsList');
+    posts.forEach(post => {
+      const article = document.createElement('article');
+      article.className = 'post';
+      article.innerHTML = `
+        <div style="display:flex;justify-content:space-between;align-items:center">
+          <h3 style="margin:0">${post.title}</h3>
+          <div class="meta">${post.date}</div>
+        </div>
+        <div class="excerpt">${post.excerpt}</div>
+        <div style="margin-top:10px;display:flex;gap:8px">
+          <button class="btn" onclick="openPost(${post.id})">Leer más</button>
+          <a class="btn ghost" href="#">Compartir</a>
+        </div>
+      `;
+      postsList.appendChild(article);
+    });
+
+    function openPost(id){
+      const p = posts.find(x=>x.id===id);
+      if(!p) return;
+      // Simple modal using alert for portability. Replace with modal if deseas.
+      const full = `${p.title}\n\n${p.content}`;
+      alert(full);
+    }
+
+    // Contact form sends mailto (fallback) so it works sin servidor
+    function sendMail(){
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const message = document.getElementById('message').value.trim();
+      if(!name||!email||!message) return false;
+      const subject = encodeURIComponent(`Contacto desde portfolio: ${name}`);
+      const body = encodeURIComponent(`Nombre: ${name}%0AEmail: ${email}%0A%0A${message}`);
+      window.location.href = `mailto:tu.email@example.com?subject=${subject}&body=${body}`;
+      return false; // prevent actual form submit
+    }
+
+  </script>
+</body>
+</html>
