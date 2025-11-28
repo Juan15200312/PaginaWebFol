@@ -201,9 +201,8 @@
     ];
 
     const posts = [
-      {id:1,title:'Aprendiendo herencia en Java',date:'2025-02-10',excerpt:'Explico cómo usar la herencia y @Override en Java con ejemplos.',content:'La herencia en Java es un concepto de la programación orientada a objetos (POO) que permite que una clase (subclase) herede propiedades y comportamientos (campos y métodos) de otra clase existente (superclase). Esto promueve la reutilización de código, la creación de jerarquías de clases y una mejor organización del programa. Para indicar la herencia, se utiliza la palabra clave extends. Además, el uso de @Override permite redefinir métodos heredados para proporcionar una implementación específica en la subclase.'},
-      {id:2,title:'Mi experiencia creando una API en Flask',date:'2025-04-13',excerpt:'Pasos para crear una API que convierte YouTube a MP3/MP4.',content:'El blog "Mi experiencia creando una API en Flask" detalla el proceso de desarrollo de una API RESTful en Python. Usando Flask y la biblioteca yt-dlp, el autor construyó una herramienta para convertir enlaces de YouTube a formatos MP3/MP4, enfocándose en la simplicidad, la reutilización de código y la gestión de errores prácticos.'},
-      {id:3,title:'Cómo programar un juego simple en Python',date:'2025-01-18',excerpt:'Guía rápida para crear un juego de consola, estructura y buenas prácticas.',content:'La guía "Cómo programar un juego simple en Python" ofrece un tutorial rápido para principiantes, delineando los pasos esenciales para construir un juego funcional de consola. Cubre la estructura básica del código, la lógica del juego y la implementación de buenas prácticas de programación.'}
+      {id:1,title:'Aprendiendo herencia en Java',date:'2025-02-10',excerpt:"Nunca olvidaré cómo la herencia dejó de ser un montón de palabras raras y se convirtió en algo entendible, pero no fue por la explicación perfecta de quien uno esperaría. En clase teníamos como profesor de programación a Javier, un tío que sabía Java con años y años de experiencia; cuando hablaba sobre patrones, clases y buenas prácticas, se le notaba la veteranía. El problema era que, precisamente por eso, no sabía transmitirlo: usaba términos técnicos, iba muy rápido y daba por sentado que todos entendíamos pequeñas piezas que, para nosotros, eran grandes agujeros negros. Yo salía de sus clases más confundido que al entrar; había cosas que simplemente no llegaban.El punto curioso es que Javier era el tipo que en el mundo real habría hecho milagros con código, pero en el aula era como si faltara la llave para abrir la puerta del entendimiento. Entonces llegó Mario, profesor de la asignatura Principios de programación. Mario no hacía alarde de tener décadas de experiencia, pero tenía una habilidad para enseñar, sabía bajar lo complejo a ejemplos muy cotidianos y nos obligaba a practicar hasta que la idea se quedaba. Un día, viendo que nadie pillaba lo que explicaba Javier, empezó a darnos refuerzos en Java (clases extra, ejercicios paso a paso, explicaciones con analogías) y poco a poco las piezas empezaron a encajar.Recuerdo una clase con Mario donde, sin quererlo, terminó siendo el clic definitivo. Estábamos repasando ejemplos sencillos, con risas y errores clientes (de esos que solo entiende quien programa). Yo seguía bloqueado en ciertos puntos (constructores, métodos heredados, por qué repetir código era una mala idea) y él volvió al ejemplo más absurdo: ‘imagina que tienes una receta base y otras recetas que solo cambian un ingrediente’. Lo explicó de una forma tan simple y práctica que por primera vez vi cómo las clases podían formar una familia y compartir cosas sin repetir todo. La parte más loca fue que, con el tiempo, mi mente hizo lo que yo llamo ‘el enlace’. Fue increíble el momento exacto en el que todo se iluminó, una mezcla de ‘ah, claro’ y ‘¿cómo no lo había visto antes?’. No fue una sola clase ni un truco mágico, fue la suma de dos maneras de enseñar la profundidad de Javier y la claridad de Mario. Javier aportó la perspectiva poderosa y profesional; Mario la traducción humana que permitió que esa perspectiva entrara. Hoy, cuando pienso en herencia en Java, no recuerdo fórmulas ni definiciones secas, recuerdo ese momento en que todo empezó a tener sentido en mi cabeza. Si algo aprendí, además de la técnica, fue que a veces hace falta más de una voz para entender algo y que los buenos profesores no siempre son los más expertos, sino los que encuentran la forma de que tú lo entiendas.",content:'La herencia en Java es un concepto de la programación orientada a objetos (POO) que permite que una clase (subclase) herede propiedades y comportamientos (campos y métodos) de otra clase existente (superclase). Esto promueve la reutilización de código, la creación de jerarquías de clases y una mejor organización del programa. Para indicar la herencia, se utiliza la palabra clave extends. Además, el uso de @Override permite redefinir métodos heredados para proporcionar una implementación específica en la subclase.'},
+
     ];
 
     // Render projects
@@ -234,10 +233,9 @@
           <h3 style="margin:0">${post.title}</h3>
           <div class="meta">${post.date}</div>
         </div>
-        <div class="excerpt">${post.excerpt}</div>
-        <div style="margin-top:10px;display:flex;gap:8px">
+        <div class="excerpt"><br>${post.excerpt}</div>
+        <div style="margin-top:30px;display:flex;gap:8px">
           <button class="btn" onclick="openPost(${post.id})">Leer más</button>
-          <a class="btn ghost" href="#">Compartir</a>
         </div>
       `;
       postsList.appendChild(article);
@@ -247,7 +245,7 @@
       const p = posts.find(x=>x.id===id);
       if(!p) return;
       // Simple modal using alert for portability. Replace with modal if deseas.
-      const full = `${p.title}\n\n${p.content}`;
+      const full = `${p.title}\n\n${p.excerpt}`;
       alert(full);
     }
 
